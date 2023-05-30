@@ -2,6 +2,7 @@ package com.big0soft.testdeploy.controller;
 
 import com.big0soft.testdeploy.model.Customer;
 import com.big0soft.testdeploy.service.CustomerService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +17,7 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
+    @GetMapping("customers")
     public List<Customer> getAllCustomer() {
         return customerService.getAllCustomer();
     }
